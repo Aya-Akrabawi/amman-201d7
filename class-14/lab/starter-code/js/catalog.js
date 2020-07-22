@@ -5,8 +5,9 @@
 // Set up an empty cart for use on this page.
 var cart = new Cart([]);
 var openDropdown;
-var itemNames;
-var itemFilePath;
+var itemNames = [];
+var itemFilePath = [];
+var x = [];
 
 // On screen load, we call this method to put all of the busmall options
 // (the things in the Product.allProducts array) into the drop down list.
@@ -17,30 +18,29 @@ function populateForm() {
      var ProductsOptions = document.createElement('option')
   selectElement.appendChild(ProductsOptions)
   ProductsOptions.textContent = "Products List"
-var itemNames = []
-var itemFilePath = []
+//var itemNames = []
+//var itemFilePath = []
   for (var i in Product.allProducts) {
-  openDropdown = Product.allProducts[i].name;
-    openDropdown = document.createElement('option')
+  //openDropdown = Product.allProducts[i].name;
+  openDropdown = document.createElement('option')
   selectElement.appendChild(openDropdown)
   openDropdown.textContent = Product.allProducts[i].name
+  
   itemNames.push(Product.allProducts[i].name)
-  //itemFilePath.push(Product.allProducts[i].filePath)
+  itemFilePath.push(Product.allProducts[i].filePath)
 
 
   }
-  //console.log(itemNames)
   
 
-
-
 }
+console.log(itemFilePath)
 
 // When someone submits the form, we need to add the selected item to the cart
 // object, save the whole thing back to local storage and update the screen
 // so that it shows the # of items in the cart and a quick preview of the cart itself.
 function handleSubmit(event) {
-
+var event = onclick.
   // TODO: Prevent the page from reloading
   event.preventDefault()
 
@@ -57,6 +57,8 @@ function addSelectedItemToCart() {
   // TODO: suss out the item picked from the select list
  
   openDropdown.remove(openDropdown.selectedIndex);
+  openDropdown.setAttribute(onclick, x.push(openDropdown) )
+  console.log (x)
 
   // TODO: get the quantity
   
